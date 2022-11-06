@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './question.dart';
+import './answer.dart';
 // void main() {
 //   runApp(MyApp());
 // }
@@ -32,24 +33,14 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Le Minh Nghia'),
         ),
-        body: Column(children: [
-          Question(questions[_questionIndex]),
-          ElevatedButton(
-            child: Text('Answer 1'),
-            onPressed: _answerQuestion,
-          ),
-          ElevatedButton(
-            child: Text('Answer 2'),
-            onPressed: () => print('Answer 2 chosen!'),
-          ),
-          ElevatedButton(
-            child: Text('Answer 3'),
-            onPressed: () {
-              // ...
-              print('Answer 3 chosen!');
-            },
-          ),
-        ]),
+        body: Column(
+          children: [
+            Question(questions[_questionIndex]),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+          ],
+        ),
       ),
     );
   }
